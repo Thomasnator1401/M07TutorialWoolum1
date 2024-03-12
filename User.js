@@ -1,43 +1,43 @@
-const mongoose = require('mongoose');
-const { isEmail } = require('validator');
-const bcrypt = require('bcrypt');
+Const mongoose = require('mongoose');
+Const  isEmail  = require('validator');
+Const bcrypt = require('bcrypt');
 
-const userSchema = new mongoose.Schema({
-  email: {
+Const userSchema = new mongoose.Schema(
+  electronic mail: 
     type: String,
     required: [true, 'Please enter an email'],
-    unique: true,
-    lowercase: true,
-    validate: [isEmail, 'Please enter a valid email']
-  },
-  password: {
-    type: String,
+    particular: true,
+    lowercase: authentic,
+    Validate: [isE-Mail, 'Please enter a valid email']
+  ,
+  password: 
+    kind: String,
     required: [true, 'Please enter a password'],
-    minlength: [6, 'Minimum password length is 6 characters'],
-  }
-});
+    min-length: [6, 'Minimum password length is 6 characters'],
+  
+);
 
 
-// fire a function before doc saved to db
-userSchema.pre('save', async function(next) {
-  const salt = await bcrypt.genSalt();
-  this.password = await bcrypt.hash(this.password, salt);
-  next();
-});
+// fireplace a characteristic before doc saved to db
+UserSchema.Pre('store', async characteristic(subsequent) 
+  const salt = watch for bcrypt.GenSalt();
+  this.Password = await bcrypt.Hash(this.Password, salt);
+  subsequent();
+);
 
-// static method to login user
-userSchema.statics.login = async function(email, password) {
-  const user = await this.findOne({ email });
-  if (user) {
-    const auth = await bcrypt.compare(password, user.password);
-    if (auth) {
-      return user;
-    }
-    throw Error('incorrect password');
-  }
-  throw Error('incorrect email');
-};
+// static method to login consumer
+UserSchema.Statics.Login = async characteristic(e-mail, password) 
+  const consumer = look ahead to this.FindOne( email );
+  if (consumer) 
+    const auth = look forward to bcrypt.Examine(password, person.Password);
+    if (auth) 
+      go back user;
+    
+    throw errors('incorrect password');
+  
+  throw mistakes('incorrect email');
+;
 
-const User = mongoose.model('user', userSchema);
+Const consumer = mongoose.Version('user', userSchema);
 
-module.exports = User;
+Module.Exports = person;
