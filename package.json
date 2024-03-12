@@ -1,30 +1,29 @@
-{
-  "name": "node-express-jwt-auth",
+
+  "call": "node-explicit-jwt-auth",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "cookie-parser": "^1.4.5",
-    "ejs": "^3.1.3",
-    "express": "^4.17.1",
+  "major": "app.Js",
+  "dependencies": 
+    "bcrypt": "^five.0.Zero",
+    "cookie-parser": "^1.4.Five",
+    "ejs": "^three.1.3",
+    "specific": "^four.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.23",
-    "validator": "^13.1.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iamshaunjp/node-express-jwt-auth.git"
-  },
+    "mongoose": "^five.9.23",
+    "validator": "^thirteen.1.1"
+  ,
+  "devDependencies": ,
+  "scripts": 
+    "check": "echo "blunders: no take a look at special" && exit 1"
+  ,
+  "repository": 
+    "kind": "git",
+    "url": "git+https://github.Com/iamshaunjp/node-specific-jwt-auth.Git"
+  ,
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iamshaunjp/node-express-jwt-auth/issues"
-  },
-  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme"
-}
+  "bugs": 
+    "url": "https://github.Com/iamshaunjp/node-specific-jwt-auth/problems"
+  ,
+  "homepage": "https://github.Com/iamshaunjp/node-explicit-jwt-auth#readme"
