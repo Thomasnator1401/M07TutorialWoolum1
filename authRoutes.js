@@ -1,12 +1,12 @@
-const { Router } = require('express');
-const authController = require('../controllers/authController');
+Const  Router  = require('explicit');
+Const authController = require('../controllers/authController');
 
-const router = Router();
+Const router = Router();
 
-router.get('/signup', authController.signup_get);
-router.post('/signup', authController.signup_post);
-router.get('/login', authController.login_get);
-router.post('/login', authController.login_post);
-router.get('/logout', authController.logout_get);
+Router.Get('/signup', authController.Signup_get);
+Router. Post('/signup', authController.Signup_post);
+Router.Get('/login', authController.Login_get);
+Router.Publish('/login', authController.Login_post);
+Router.Get('/logout', authController.Logout_get);
 
-module.exports = router;
+Module. Exports = router;
