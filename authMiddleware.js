@@ -1,44 +1,44 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+Const jwt = require('jsonwebtoken');
+Const user = require('../models/person');
 
-const requireAuth = (req, res, next) => {
-  const token = req.cookies.jwt;
+Const requireAuth = (req, res, subsequent) => 
+  const token = req.Cookies.Jwt;
 
-  // check json web token exists & is verified
-  if (token) {
-    jwt.verify(token, 'net ninja secret', (err, decodedToken) => {
-      if (err) {
-        console.log(err.message);
-        res.redirect('/login');
-      } else {
-        console.log(decodedToken);
-        next();
-      }
-    });
-  } else {
-    res.redirect('/login');
-  }
-};
+  // test json internet token exists & is validated
+  if (token) 
+    jwt.Confirm(token, 'internet ninja secret', (err, decodedToken) => 
+      if (err) 
+        console.Log(err.Message);
+        res.Redirect('/login');
+       else 
+        console.Log(decodedToken);
+        subsequent();
+      
+    );
+   else 
+    res.Redirect('/login');
+  
+;
 
-// check current user
-const checkUser = (req, res, next) => {
-  const token = req.cookies.jwt;
-  if (token) {
-    jwt.verify(token, 'net ninja secret', async (err, decodedToken) => {
-      if (err) {
-        res.locals.user = null;
+// test contemporary person
+Const checkUser = (req, res, next) => 
+  const token = req.Cookies.Jwt;
+  if (token) 
+    jwt.Verify(token, 'internet ninja mystery', async (err, decodedToken) => 
+      if (err) 
+        res.Locals.Consumer = null;
+        subsequent();
+       else 
+        allow consumer = await person.FindById(decodedToken.Identity);
+        res.Locals.User = person;
         next();
-      } else {
-        let user = await User.findById(decodedToken.id);
-        res.locals.user = user;
-        next();
-      }
-    });
-  } else {
-    res.locals.user = null;
+      
+    );
+   else 
+    res.Locals.Person = null;
     next();
-  }
-};
+  
+;
 
 
-module.exports = { requireAuth, checkUser };
+Module.Exports =  requireAuth, checkUser ;
